@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Fiesta de Cumpleaños Capibara Style! 🎉</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            color: #5a3e36;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fffaf0;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #8b4513;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px #d2b48c;
+        }
+        .capibara-img {
+            width: 200px;
+            border-radius: 50%;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        .details {
+            background-color: #e6f7e6;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        #map {
+            height: 300px;
+            width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 3px dashed #8b4513;
+            overflow: hidden;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 10px;
+        }
+        button {
+            background-color: #8b4513;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        button:hover {
+            background-color: #5a3e36;
+            transform: scale(1.05);
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            border-radius: 50%;
+            animation: fall 5s linear infinite;
+        }
+        @keyframes fall {
+            to { transform: translateY(100vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¡Fiesta de Cumpleaños Numero 7 de KAYMILE! 🎂🌿</h1>
+        <img src="https://i.pinimg.com/1200x/a7/a4/7f/a7a47f58fb5e78da948a065fc1311ba3.jpg" alt="Capibara feliz" class="capibara-img">
+        <p>¡Únete a la celebración más relajada del año! junto a Kaymile🌞</p>
+        
+        <div class="details">
+            <h2>📅 Fecha: 23 de Agosto</h2>
+            <h2>⏰ Hora: 2:00 PM</h2>
+            <h2>📍 Lugar: Parque de los Capibaras (ver mapa)</h2>
+        </div>
+
+        <div id="map">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!4v1755122219327!6m8!1m7!1smlVsWjuzl0DvM6LoLt5H2A!2m2!1d19.38430037876569!2d-99.62419708965713!3f296.398440541765!4f5.823070810889476!5f0.7820865974627469" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+
+        <p>¡Habrá pastel, sol y mucho relax capibara-style!</p>
+        
+        <button onclick="confirmAttendance()">¡Confirmo Asistencia! 🎉</button>
+    </div>
+
+    <script>
+        // Confeti al confirmar asistencia
+        function confirmAttendance() {
+            alert("¡Gracias por confirmar! 🦫 Te esperamos con agua fresca y zanahorias.");
+            createConfetti();
+        }
+
+        function createConfetti() {
+            const colors = ["#8b4513", "#ff6347", "#ffd700", "#32cd32", "#9370db"];
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement("div");
+                confetti.className = "confetti";
+                confetti.style.left = Math.random() * 100 + "vw";
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDuration = Math.random() * 3 + 2 + "s";
+                document.body.appendChild(confetti);
+                setTimeout(() => confetti.remove(), 50000);
+            }
+        }
+    </script>
+</body>
+</html>
+
